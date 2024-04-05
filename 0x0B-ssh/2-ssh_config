@@ -1,0 +1,7 @@
+# SSH Config File
+#
+Host web-01
+	Hostname ken
+	User blac_diamond
+	PasswordAuthentication no
+	IdentityFile ~/.ssh/school
