@@ -17,7 +17,8 @@
 #     return results.get("subscribers")
 
 
-import requests  
+import requests
+import sys
 
 def number_of_subscribers(subreddit):  
     url = f"https://www.reddit.com/r/{subreddit}/about.json"  
@@ -27,7 +28,6 @@ def number_of_subscribers(subreddit):
         response = requests.get(url, headers=headers, allow_redirects=False)  
         if response.status_code == 200:  
             data = response.json()  
-            print(data['data']['subscribers'] )
             return data['data']['subscribers']  
         else:  
             return 0  
@@ -36,4 +36,11 @@ def number_of_subscribers(subreddit):
         return 0
     
 
-number_of_subscribers("Python")
+def main():
+    if len(sys.argv) < 2 or len(sys.argv) > 2:
+        print("out of rang (argument)")
+    else:
+        print(number_of_subscribers(sys.argv[1]))
+
+if __name__ == "__main__":
+    main()
