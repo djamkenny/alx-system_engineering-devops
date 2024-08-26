@@ -1,10 +1,10 @@
-
+#!/usr/bin/python3
 
 import requests
-import sys
 
-def number_of_subscribers(subreddit):  
-    url = f"https://www.reddit.com/r/{subreddit}/about.json"  
+def number_of_subscribers(subreddit):
+    """Return the total number of subscribers on a given subreddit."""
+    url = f"https://www.reddit.com/r/{subreddit}/about.json"
     headers = {'User-Agent': 'my-reddit-app/0.1'}  
     
     try:  
